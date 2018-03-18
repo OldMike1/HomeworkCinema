@@ -37,8 +37,8 @@ namespace HomeworkCinema
             {
                 while (true)
                 {
-                    x = rnd.Next(0, 8);
-                    y = rnd.Next(0, 8);
+                    x = rnd.Next(0, human.GetLength(0));
+                    y = rnd.Next(0, human.GetLength(1));
                     if (human[x, y].Age == 0)
                     {
                         human[x, y] = new Human { Age = rnd.Next(16, 60), Sex = Sex[rnd.Next(0, 2)] };
@@ -101,7 +101,10 @@ namespace HomeworkCinema
             cinema.GetAll();
             Console.WriteLine();
 
-            
+            Cinema cinema2 = new Cinema(18, 18, 25);
+            cinema2.SetPeople();
+            PrintCinema(cinema2);
+            cinema2.GetAll();
 
         }
     }
